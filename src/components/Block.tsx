@@ -17,13 +17,13 @@ export const Block = ({ handleToCalculateInput, currencyToConvert, valueToConver
         }
         
         if (currencyToConvert[0] === 'RUB') {
-            return `${converterFromRubles(valueToConvert, activeCurrency[1])}`;
+            return `${converterFromRubles(valueToConvert, activeCurrency[1]).toFixed(2)}`;
         }
         if (activeCurrency[0] === 'RUB') {
-            return `${converterToRubles(valueToConvert, currencyToConvert[1])}`;
+            return `${converterToRubles(valueToConvert, currencyToConvert[1]).toFixed(2)}`;
         }
         if (currencyToConvert[0] !== 'RUB' && activeCurrency[0] !== 'RUB') {
-            return `${converterFromRubles(converterToRubles(valueToConvert, currencyToConvert[1]), activeCurrency[1])}`;
+            return `${converterFromRubles(converterToRubles(valueToConvert, currencyToConvert[1]), activeCurrency[1]).toFixed(2)}`;
         }
  
         return 'NaN';
